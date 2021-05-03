@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "d15302a6-b12a-4b57-a6ad-b51d366d2a33",
+		"name": "api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "show",
+			"item": [
+				{
+					"name": "allShows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/shows",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"search\":\"hola\",\n    \"asc\":true,\n    \"genre\":\"comedy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/shows/search",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addShow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Toy Story",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Pelicula animado sobre juguetes vivientes",
+									"type": "text"
+								},
+								{
+									"key": "movie",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "drama",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "2021-05-01",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tomasnobile/Descargas/toystory.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/shows/add",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyShow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Toy Story",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Pelicula animado sobre juguetes vivientes",
+									"type": "text"
+								},
+								{
+									"key": "movie",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "drama",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "2021-05-01",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tomasnobile/Descargas/toystory.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/shows/add/05144c8f-b58b-47b1-a9e0-67bc15496a57",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows",
+								"add",
+								"05144c8f-b58b-47b1-a9e0-67bc15496a57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oneShow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/shows/582cad7b-47c9-4b21-9e6c-4637ee870244",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows",
+								"582cad7b-47c9-4b21-9e6c-4637ee870244"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/shows/7eb10a67-e64c-40c5-894e-29f75424dab7",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows",
+								"7eb10a67-e64c-40c5-894e-29f75424dab7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "characters",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"search\":\"\",\n    \"appearances\":[\"toy\"],\n    \"minAge\":30,\n    \"maxWeight\":60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/characters/search",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"characters",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCharacter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Buddy",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Vaquero",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "0.2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tomasnobile/Descargas/woody.jpg",
+									"disabled": true
+								},
+								{
+									"key": "shows",
+									"value": "e0f64755-1cff-4f3e-95e2-602dc486274b",
+									"type": "text"
+								},
+								{
+									"key": "shows",
+									"value": "f01a733d-ec34-46bc-8281-f5a0624499fe",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/characters/add",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"characters",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyCharacter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Buddy",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Vaquero y amigo",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "0.2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tomasnobile/Descargas/toy story.jpg"
+								},
+								{
+									"key": "shows",
+									"value": "e0f64755-1cff-4f3e-95e2-602dc486274b",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shows",
+									"value": "f01a733d-ec34-46bc-8281-f5a0624499fe",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/characters/b5ec40a9-6316-457e-8d9a-568388586688",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"characters",
+								"b5ec40a9-6316-457e-8d9a-568388586688"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allCharacters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/shows",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"shows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oneCharacter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRmluYWwiOnsiaWQiOiJmMzVmNDBjZi02M2Q0LTQ5YzEtYmNlYi1jMThjNGY2ZmRhZDkiLCJuYW1lIjoiVG9tYXMiLCJlbWFpbCI6Im5vYmlsZW9tYXNAaWNsb3VkLmNvbSJ9LCJpYXQiOjE2MjAwMDYwODYsImV4cCI6MTYyMDYxMDg4Nn0.rzVoZ5Mn82BFedDYlBENZsl3hhG4aMX0By2UhzXmCMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/characters/b5ec40a9-6316-457e-8d9a-568388586688",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"characters",
+								"b5ec40a9-6316-457e-8d9a-568388586688"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCharacter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/characters/7eb10a67-e64c-40c5-894e-29f75424dab7",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"characters",
+								"7eb10a67-e64c-40c5-894e-29f75424dab7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Tomas\",\n    \"email\":\"nobileomas@icloud.com\",\n    \"password\":\"hola1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/auth/signup",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"nobileomas@icloud.com\",\n    \"password\":\"hola1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/auth/signin",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
