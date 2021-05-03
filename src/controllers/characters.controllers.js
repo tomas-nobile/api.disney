@@ -6,7 +6,7 @@ import { Op } from 'sequelize'
 export async function createCharacter(req, res) {
     const arr = [];
     let image;
-
+    console.log(req.body.shows);
     if (req.file) {
         let file = req.file.originalname.split(".");
         const fileType = file[file.length - 1];
@@ -25,12 +25,15 @@ export async function createCharacter(req, res) {
         image,
     });
 
-    for (let e of req.body.shows) {
-        let show = await Show.findByPk(e);
-        arr.push(show);
-        console.log(e);
-    }
-    await character.addShows(arr);
+    if (req.body.shows.isArray) {
+        for (let e of req.body.shows) {
+            let show = await Show.findByPk(e);
+            arr.push(show);
+            console.log(e);
+        }
+        await character.addShows(arr)
+    } else await character.addShows(req.body.shows)
+
 
     res.send(character);
 }
